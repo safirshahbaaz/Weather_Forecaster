@@ -1,3 +1,6 @@
 body {
 	background-image: url("http://www.gannett-cdn.com/-mm-/3526533239800dac0c978150377d099025f1e52c/c=52-700-4303-3102&r=x1683&c=3200x1680/local/-/media/USATODAY/None/2014/10/03/1412368123000-Mesostorm-Lightning.jpg"); 
 }
+.headercolor {
+	color: white;
+}
