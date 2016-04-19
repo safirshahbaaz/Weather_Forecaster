@@ -1,7 +1,9 @@
-app.controller('MainController', ['$scope', function($scope) { 
+app.controller('MainController', ['$scope', function($scope, HttpGetter) { 
 	$scope.cityName = '';
 	$scope.getCityName = function(city) {
 		$scope.cityName = city;
-		console.log($scope.cityName);
+		$scope.data = HttpGetter.getsomething(city, function(items) {
+			return items;
+		});
 	};
 }]);
