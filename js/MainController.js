@@ -1,7 +1,8 @@
 app.controller('MainController', ['$scope', 'HttpGetter', function($scope, HttpGetter) { 
 	var successFunction = function(data) {
 		$scope.data = data;
-		console.log(data);
+		$scope.data.current.condition.icon = "http:" + $scope.data.current.condition.icon;
+		console.log($scope.data);
 	}
 
 	var errorFunction = function(data) {

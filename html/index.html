@@ -20,8 +20,35 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-6 col-md-offset-3">
-						<p class="headercolor">{{ cityName }}</p>
+					<div class="col-md-2 col-md-offset-3">
+						<h2 class="headercolor">City:</h2>
+					</div>
+					<div class="col-md-2 col-md-offset-1">
+						<h2 class="headercolor">{{ data.location.name }}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-3">
+						<h2 class="headercolor">Temperature:</h2>
+					</div>
+					<div class="col-md-2 col-md-offset-1">
+						<h2 class="headercolor">{{ data.current.temp_c }}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-3">
+						<h2 class="headercolor">Condition:</h2>
+					</div>
+					<div class="col-md-2 col-md-offset-1">
+						<h2 class="headercolor">{{ data.current.condition.text }}</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-2 col-md-offset-3">
+						<h2 class="headercolor">Image:</h2>
+					</div>
+					<div class="col-md-2 col-md-offset-1">
+						<img ng-src="{{ data.current.condition.icon }}">
 					</div>
 				</div>
 			</div>
