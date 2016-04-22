@@ -11,6 +11,7 @@ app.controller('MainController', ['$scope', 'HttpGetter', function($scope, HttpG
 
 	$scope.cityName = '';
 	$scope.getCityName = function(city) {
+		$scope.isActive = true;
 		$scope.cityName = city;
 		HttpGetter.getCityData($scope.cityName, successFunction, errorFunction);
 	};
