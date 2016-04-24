@@ -3,24 +3,26 @@
 	<title>Weather Forecaster</title>
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<script type="text/javascript" src="../js/script.js"></script>
 	</head>
 	<body ng-app="myApp">
 		<div class="container-fluid">
 			<div ng-controller="MainController">	
-				<div ng-class="{'active': isActive==true}">
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center headercolor"> Weather Forecaster </h1>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+					<h1 class="text-center headercolor"> Weather Forecaster </h1>
+				</div>
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3">
+						<input type="text" class="form-control" id="citybox" required="yes" placeholder="Enter the City" ng-model="cityName"></input>
 					</div>
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3">
-							<input type="text" class="form-control" required="yes" placeholder="Enter the City" ng-model="cityName"></input>
-						</div>
-						<div class="col-md-1">
-							<button class="btn btn-block" ng-click="getCityName(cityName)">Submit</button>
-						</div>
+					<div class="col-md-1">
+						<button class="btn btn-block" id="submitBtn" ng-model="clicked" ng-init="clicked=false" ng-click="getCityName(cityName); clicked=true">Submit</button>
 					</div>
+				</div>
+				<div ng-if="clicked" class="animate-if">
 					<div class="row">
 						<div class="col-md-2 col-md-offset-3">
 							<h2 class="headercolor">City:</h2>
@@ -66,7 +68,7 @@
 		</div>
 		<script type="text/javascript" src="../js/app.js"></script>
 		<script type="text/javascript" src="../js/MainController.js"></script>
-		<script type="text/javascript" src="../js/HttpGetter.js"></script>
+		<script type="text/javascript" src="../js/HttpGetter.js"></script>	
 		<link rel="stylesheet" type="text/css" href="../css/style.css">
 	</body>
 </html>
